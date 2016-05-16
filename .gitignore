@@ -1,0 +1,4 @@
+config.ini
+members.json
+*.pyc
+/.idea
