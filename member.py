@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Member:
     name_key = 'name'
     trello_id_key = 'trello_id'
@@ -11,7 +14,13 @@ class Member:
         self.channel = self.read_value(self.channel_key, entry)
 
     def needs_reminder(self):
-        return self.slack_id != self.slack_id
+        time_now = datetime.utcnow()
+        if len(self.channel) < 1:
+            return False
+        if time_now.weekday() in range(0, 5) and time_now.hour in range(12, 23):
+            return True
+        else:
+            return False
 
     def to_entry(self):
         return {self.name_key: self.name,

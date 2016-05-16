@@ -1,5 +1,6 @@
-from member import Member
 import json
+
+from member import Member
 
 
 class Members:
@@ -21,6 +22,12 @@ class Members:
 
         self.members[slack_id].channel = channel
         self.save_all()
+
+    def has_channel(self, slack_id, channel):
+        if slack_id in self.members and channel == self.members[slack_id].channel:
+            return True
+        else:
+            return False
 
     def save_all(self):
         with open(self.file_path, 'w') as json_file:
