@@ -5,8 +5,8 @@ class Bot:
     private_response = "I'm adding a card with the title '%s' into list Develop DO and add you as a member."
     public_response = "Please write me a direct message to add a task on the Trello board."
     no_access_response = "Sorry, I'm not allowed to help you. Please write to @tanya to get the access."
-    first_response = "Hello! I'm Albert. I'm here to help you with time tracking. I will post each message" \
-                     + "you write me as a card to Trello and remind you to keep tracking."
+    first_response = "Hello! I'm Alfred. I'm here to help you with time tracking. I will post each message" \
+                     + " you write me as a card to Trello and remind you to keep tracking."
 
     def __init__(self, slack_client, trello_client, members):
         self.slack_client = slack_client
