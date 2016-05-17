@@ -17,7 +17,7 @@ class Member:
         time_now = datetime.utcnow()
         if len(self.channel) < 1:
             return False
-        if time_now.weekday() in range(0, 5) and time_now.hour in range(12, 23):
+        if time_now.weekday() in range(0, 5) and time_now.hour in range(12, 19):
             return True
         else:
             return False

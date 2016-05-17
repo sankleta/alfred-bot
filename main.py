@@ -15,7 +15,7 @@ config.read('config.ini')
 slack_token = config.get("Slack", "slack_token")
 trello_key = config.get("Trello", "trello_key")
 trello_token = config.get("Trello", "trello_token")
-list_id = config.get("Trello", "my_list_id")
+list_id = config.get("Trello", "list_id")
 
 members = Members('members.json')
 slack = SlackClient(slack_token)
