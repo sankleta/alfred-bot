@@ -1,4 +1,5 @@
 from message import Message
+import re
 
 
 class Bot:
@@ -40,7 +41,9 @@ class Bot:
         self.send_message(message.channel(), self.private_response % message.text())
         # TODO: Ask if proceed
         # TODO: Add index method to Members
-        self.trello_client.add_card(self.members.members[message.user()].trello_id, message.text())
+
+        card_title = re.compile('^<@.{9}>: ').sub("", message.text())
+        self.trello_client.add_card(self.members.members[message.user()].trello_id, card_title)
 
     def handle_public(self, message):
         self.send_message(message.channel(), self.public_response)
